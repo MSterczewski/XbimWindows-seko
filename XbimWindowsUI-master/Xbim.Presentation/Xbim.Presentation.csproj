@@ -46,6 +46,10 @@
     <PackageReference Include="Xbim.Geometry" Version="5.1.437" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="ConsoleTcpClient" Label="ConsoleTcpClient">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\ConsoleTcpClient\obj\Release\ConsoleTcpClient.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />

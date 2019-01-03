@@ -2,7 +2,7 @@
   <PropertyGroup>
     <TargetFramework>net472</TargetFramework>
     <OutputType>WinExe</OutputType>
-    <PublishUrl>publish\</PublishUrl>
+    <PublishUrl>D:\sekocenbud\0\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
     <UpdateEnabled>false</UpdateEnabled>
