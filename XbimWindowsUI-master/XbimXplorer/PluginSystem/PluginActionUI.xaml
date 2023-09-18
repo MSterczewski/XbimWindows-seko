@@ -1,0 +1,23 @@
+﻿<UserControl x:Class="XbimXplorer.PluginSystem.PluginActionUI"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:XbimXplorer.PluginSystem"
+             mc:Ignorable="d" 
+             d:DataContext="{d:DesignInstance Type=local:PluginInformationVm}"
+             d:DesignHeight="50" d:DesignWidth="500">
+    <Grid>
+        <Button IsEnabled="{Binding IsInstalled}" Content="{Binding EnableToggleCaption}" Visibility="{Binding VisibleWhenInstalled}" Click="ToggleEnabled" 
+                Margin="0,0,200,0" HorizontalAlignment="Left" Width="90" Height="22" VerticalAlignment="Center" />
+        <Button IsEnabled="{Binding IsInstalledAndNotLoaded}" Visibility="{Binding VisibleWhenInstalled}" Click="RemovePlugin" 
+                Margin="100,0,200,0" Content="Remove" HorizontalAlignment="Left" Width="90" Height="22" VerticalAlignment="Center" 
+                ToolTipService.ShowOnDisabled="true" ToolTip="Remove is only possible when a plugin is not loaded"
+                />
+        <Button IsEnabled="{Binding CanLoad}"  Content="Load" Click="Load" 
+                Margin="0,0,100,0" HorizontalAlignment="Right" Width="90" Height="22" VerticalAlignment="Center" />
+        <Button IsEnabled="{Binding CanDownload}" Content="{Binding DownloadCaption}" Click="Download"
+                Margin="0,0,0,0" HorizontalAlignment="Right" Width="90" Height="22" VerticalAlignment="Center" />
+
+    </Grid>
+</UserControl>
