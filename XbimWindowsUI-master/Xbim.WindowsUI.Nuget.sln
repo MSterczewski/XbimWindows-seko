@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32922.545
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Xbim.Presentation", "Xbim.Presentation\Xbim.Presentation.csproj", "{89F98E53-DE4E-4427-8244-D5934AD08849}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2666C3BA-A4F1-44A2-9F15-4F064C3F3974} = {2666C3BA-A4F1-44A2-9F15-4F064C3F3974}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XbimXplorer", "XbimXplorer\XbimXplorer.csproj", "{D6CED5D7-BE37-4A32-90A5-1444C9FFDD91}"
 EndProject
