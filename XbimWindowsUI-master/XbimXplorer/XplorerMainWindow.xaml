@@ -223,6 +223,15 @@
                             </xbim:DrawingControl3D>
                         </avalonDock:LayoutDocument>
                     </avalonDock:LayoutDocumentPane>
+                    <avalonDock:LayoutAnchorablePaneGroup DockWidth="200">
+                        <avalonDock:LayoutAnchorablePane>
+                            <avalonDock:LayoutAnchorable Title="Komunikacja SeKo" CanClose="False" CanAutoHide="False" CanHide="False" CanFloat="False">
+                                <xbim:IfcActionPanel x:Name="ActionPan" BorderThickness="1"  
+                                                        SelectedEntity="{Binding Path=SelectedItem, ElementName=MainWindow, Mode=TwoWay}"
+                                                        Model="{Binding}" Margin="0,4,0.2,0.4" />
+                            </avalonDock:LayoutAnchorable>
+                        </avalonDock:LayoutAnchorablePane>
+                    </avalonDock:LayoutAnchorablePaneGroup>
                 </avalonDock:LayoutPanel>
             </avalonDock:LayoutRoot>
         </avalonDock:DockingManager>
