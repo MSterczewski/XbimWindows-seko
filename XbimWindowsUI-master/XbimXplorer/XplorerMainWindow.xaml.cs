@@ -168,11 +168,37 @@ namespace XbimXplorer
 
             // initialise the logging repository
             LoggedEvents = new ObservableCollection<EventViewModel>();
-            // any logging event required should happen after XplorerMainWindow_Loaded
-        }
+			// any logging event required should happen after XplorerMainWindow_Loaded
+			ActionPan.BtnZoomInExecute += new EventHandler(onZoomingSelected);
 
+			ActionPan.LoadFileExecute += new EventHandler(onLoadFile);
 
-        public Visibility DeveloperVisible => Settings.Default.DeveloperMode 
+			ActionPan.BtnShowAll += new EventHandler(onBtnShowAll);
+		}
+		private void onLoadFile(object sender, EventArgs e)
+		{
+			this.Dispatcher.Invoke(() =>
+			{
+				LoadAnyModel(ActionPan.fileName);
+			});
+		}
+
+		private void onZoomingSelected(object sender, EventArgs e)
+		{
+			_camChanged = false;
+			DrawingControl.Viewport.Camera.Changed += Camera_Changed;
+			DrawingControl.ZoomSelected();
+			DrawingControl.Viewport.Camera.Changed -= Camera_Changed;
+			if (!_camChanged)
+				DrawingControl.ClipBaseSelected(0.15);
+		}
+
+		private void onBtnShowAll(object sender, EventArgs e)
+		{
+			DrawingControl.ViewHome();
+		}
+
+		public Visibility DeveloperVisible => Settings.Default.DeveloperMode 
             ? Visibility.Visible 
             : Visibility.Collapsed;
 
