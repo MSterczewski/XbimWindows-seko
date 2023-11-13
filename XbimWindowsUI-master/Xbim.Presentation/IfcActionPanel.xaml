@@ -71,7 +71,7 @@
         <DockPanel Grid.Row="2">
             <Border BorderThickness="0,0,0,1" BorderBrush="Silver" Margin="0,0,0,10">
                 <StackPanel Orientation="Vertical" Margin="0,0,0,10">
-                    <Button x:Name="btnZoomIn" Margin="20,5,20,5" Width="Auto" Click="BtnZoomIn_Click" FontSize="10">Powiększ wybrane</Button>
+                    <Button x:Name="btnZoomIn" Margin="20,5,20,5" Width="Auto" Click="BtnZoomIn_Click" FontSize="10">Pokaż wybrane</Button>
                     <Button x:Name="btnShowAll" Margin="20,5,20,5" Width="Auto" Click="BtnShowAll_Click" FontSize="10">Pokaż wszystko</Button>
                 </StackPanel>
             </Border>

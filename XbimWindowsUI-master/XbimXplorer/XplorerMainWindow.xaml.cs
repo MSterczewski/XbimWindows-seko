@@ -185,17 +185,19 @@ namespace XbimXplorer
 
 		private void onZoomingSelected(object sender, EventArgs e)
 		{
-			_camChanged = false;
-			DrawingControl.Viewport.Camera.Changed += Camera_Changed;
-			DrawingControl.ZoomSelected();
-			DrawingControl.Viewport.Camera.Changed -= Camera_Changed;
-			if (!_camChanged)
-				DrawingControl.ClipBaseSelected(0.15);
+            IsolateSelected(sender, null);
+			//_camChanged = false;
+			//DrawingControl.Viewport.Camera.Changed += Camera_Changed;
+			//DrawingControl.ZoomSelected();
+			//DrawingControl.Viewport.Camera.Changed -= Camera_Changed;
+			//if (!_camChanged)
+			//	DrawingControl.ClipBaseSelected(0.15);
 		}
 
 		private void onBtnShowAll(object sender, EventArgs e)
 		{
-			DrawingControl.ViewHome();
+            RestoreView(sender, null);
+			//DrawingControl.ViewHome();
 		}
 
 		public Visibility DeveloperVisible => Settings.Default.DeveloperMode 

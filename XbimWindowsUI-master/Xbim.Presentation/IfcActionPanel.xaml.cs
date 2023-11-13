@@ -22,6 +22,7 @@ using System.Windows.Input;
 using Xbim.Presentation;
 using Xbim.Common.Metadata;
 using static Xbim.Presentation.IfcMetaDataControl;
+using System.Globalization;
 
 namespace Xbim.Presentation
 {
@@ -470,7 +471,7 @@ namespace Xbim.Presentation
 						if (val != null)
 							this.Dispatcher.Invoke(() =>
 							{
-								this.fieldObjetosc.Text = string.Format("{0:### ##0.0000#}", Convert.ToDouble(val.NominalValue.ToString()));
+								this.fieldObjetosc.Text = string.Format("{0:### ##0.0000#}", Convert.ToDouble(val.NominalValue.ToString(), CultureInfo.InvariantCulture));
 							});
 						else
 							this.Dispatcher.Invoke(() =>
@@ -482,7 +483,7 @@ namespace Xbim.Presentation
 						if (val != null)
 							this.Dispatcher.Invoke(() =>
 							{
-								this.fieldPowierzchnia.Text = string.Format("{0:### ##0.0000#}", Convert.ToDouble(val.NominalValue.ToString()));
+								this.fieldPowierzchnia.Text = string.Format("{0:### ##0.0000#}", Convert.ToDouble(val.NominalValue.ToString(), CultureInfo.InvariantCulture));
 							});
 						else
 							this.Dispatcher.Invoke(() =>
