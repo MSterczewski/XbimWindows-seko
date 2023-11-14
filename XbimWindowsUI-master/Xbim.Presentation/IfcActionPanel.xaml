@@ -14,7 +14,7 @@
     <!--<Grid x:Name="ActionGrid" ShowGridLines="false">-->
     <Grid x:Name="ActionPane" ShowGridLines="false" Background="white">
         <Grid.RowDefinitions>
-            <RowDefinition Height="220"></RowDefinition>
+            <RowDefinition Height="240"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="Auto"></RowDefinition>
             <RowDefinition Height="90"></RowDefinition>
@@ -33,6 +33,11 @@
                                 <Label FontSize="10" VerticalAlignment="Center" Width="69">Szerokość</Label>
                                 <TextBox x:Name="fieldSzerokosc" TextAlignment="Right" Width="100" FontSize="10" IsEnabled="False"></TextBox>
                                 <Button x:Name="btnSzerokosc" HorizontalAlignment="Right" Click="BtnSzerokosc_Click" FontSize="10">+</Button>
+                            </StackPanel>
+                            <StackPanel Orientation="Horizontal">
+                                <Label FontSize="10" VerticalAlignment="Center" Width="69">Długość</Label>
+                                <TextBox x:Name="fieldDlugosc" TextAlignment="Right" Width="100" FontSize="10" IsEnabled="false"></TextBox>
+                                <Button x:Name="btnDlugosc" BorderThickness="1" HorizontalAlignment="Right" Click="BtnDlugosc_Click" FontSize="10">+</Button>
                             </StackPanel>
                             <StackPanel Orientation="Horizontal">
                                 <Label FontSize="10" VerticalAlignment="Center" Width="69">Objętość</Label>

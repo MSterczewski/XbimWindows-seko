@@ -232,6 +232,7 @@ namespace Xbim.Presentation
 			{
 				fieldWysokosc.Text = string.Empty;
 				fieldSzerokosc.Text = string.Empty;
+				fieldDlugosc.Text = string.Empty;
 				fieldObjetosc.Text = string.Empty;
 				fieldPowierzchnia.Text = string.Empty;
 				fieldObliczenia.Text = string.Empty;
@@ -350,6 +351,10 @@ namespace Xbim.Presentation
 		private void BtnSzerokosc_Click(object sender, RoutedEventArgs e)
 		{
 			this.fieldObliczenia.Text += this.fieldSzerokosc.Text + " ";
+		}
+		private void BtnDlugosc_Click(object sender, RoutedEventArgs e)
+		{
+			this.fieldObliczenia.Text += this.fieldDlugosc.Text + " ";
 		}
 
 		private void BtnObjetosc_Click(object sender, RoutedEventArgs e)
@@ -489,6 +494,18 @@ namespace Xbim.Presentation
 							this.Dispatcher.Invoke(() =>
 							{
 								this.fieldPowierzchnia.Text = "";
+							});
+
+						val = pSetSingle.Where(i => i.Name == "Długość").FirstOrDefault() as IIfcPropertySingleValue;
+						if (val != null)
+							this.Dispatcher.Invoke(() =>
+							{
+								this.fieldDlugosc.Text = string.Format("{0:### ##0.0000#}", Convert.ToDouble(val.NominalValue.ToString(), CultureInfo.InvariantCulture));
+							});
+						else
+							this.Dispatcher.Invoke(() =>
+							{
+								this.fieldDlugosc.Text = "";
 							});
 					}
 				}
